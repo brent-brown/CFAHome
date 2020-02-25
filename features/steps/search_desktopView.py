@@ -189,7 +189,7 @@ def step_impl(context):
 def step_impl(context):
     eyes.open(context.browser, "CFAHome", "Search Buckets - No filters selected")
     eyes.match_level = MatchLevel.LAYOUT
-    #eyes.force_full_page_screenshot = True
+    eyes.force_full_page_screenshot = True
     eyes.check(context.browser.current_url + " Search P", Target.window())
 
     # # End the test.
@@ -246,6 +246,7 @@ def step_impl(context):
     eyes.open(context.browser, "CFAHome", "Search Filters - No filters selected")
     # Take Screenshot
     eyes.match_level = MatchLevel.LAYOUT
+    #eyes.force_full_page_screenshot = True
     eyes.check(context.browser.current_url, Target.window())
     # # End the test.
     eyes.close()
@@ -258,32 +259,29 @@ def step_impl(context):
 def step_impl(context):
     context.browser.find_element_by_css_selector(Locators.contractorBox).click()
     context.browser.implicitly_wait(500)
-    # eyes.open(context.browser, "CFAHome", "Search Results - Person Type filter selected")
 
-    # Take Screenshot
-    # eyes.check(context.browser.current_url, Target.window())
-
-    # # End the test.
-    # eyes.close()
     print(u'STEP: And  I have selected the "Contractor" Person Type filter')
 
 
 @then('I should see the "contractor" filter selected')
 def step_impl(context):
-    staff_type = context.browser.find_elements_by_css_selector('div[class="card-id"]')
-    # print(staff_type)
-    while context.browser.find_element_by_css_selector('#srchBucketMore').is_displayed():
-        context.browser.find_element_by_css_selector('#srchBucketMore').click()
-    else:
-        for i in staff_type:
-            if i.text == "Contractor":
-                continue
-            else:
-                print(i.text, "Shouldn't be listed")
-            print(i.text)
 
-    # context.browser.find_element_by_css_selector('div[class="card-id"]')
-    print(u'STEP: Then I should see the "contractor" filter selected')
+    if context.browser.find_element_by_css_selector('#srchBucketMore').is_displayed():
+
+    # staff_type = context.browser.find_elements_by_css_selector('div[class="card-id"]')
+    # #print(staff_type)
+    # while context.browser.find_element_by_css_selector('#srchBucketMore').is_displayed():
+    #     context.browser.find_element_by_css_selector('#srchBucketMore').click()
+    # else:
+    #     for i in staff_type:
+    #         if i.text == "Contractor":
+    #             continue
+    #         else:
+    #             print(i.text, "Shouldn't be listed")
+    #         print(i.text)
+    #
+    # # context.browser.find_element_by_css_selector('div[class="card-id"]')
+        print(u'STEP: Then I should see the "contractor" filter selected')
 
 
 @step('I should see "Department field" filters')
@@ -308,7 +306,6 @@ def step_impl(context):
 
 @step('I have selected a "Location Type" filter')
 def step_impl(context):
-    # filterType = context.browser.find_elements_by_css_selector('span[class="filter-text"]')
     context.browser.find_element_by_xpath('//span[contains(@class, "filter-text") and text() ="Dwarf House " ]').click()
 
     # print(filterType)
@@ -340,7 +337,7 @@ def step_impl(context):
         # # End the test.
 
         eyes.open(context.browser, "CFAHome", "Location Type Filter")
-        # eyes.force_full_page_screenshot = True
+        #eyes.force_full_page_screenshot = True
         eyes.check(context.browser.current_url + " Location Type Filter", Target.window())
         eyes.close()
 
@@ -387,11 +384,11 @@ def step_impl(context):
 
 @step('I should see "Tags" filter options')
 def step_impl(context):
-    #eyes.open(context.browser, "CFAHome", "Tags Filter")
-    # eyes.force_full_page_screenshot = True
-    #eyes.check(context.browser.current_url + " Tags Filter", Target.window())
+    eyes.open(context.browser, "CFAHome", "Tags Filter")
+    eyes.force_full_page_screenshot = True
+    eyes.check(context.browser.current_url + " Tags Filter", Target.window())
 
-    #eyes.close()
+    eyes.close()
     assert context.browser.find_element_by_xpath(
         '//div[contains(@class, "filter-heading") and text() = " Tags"]').is_displayed()
 
@@ -448,7 +445,7 @@ def step_impl(context):
     print(u'STEP: Then I should see a list of Resources')
 
     eyes.open(context.browser, "CFAHome", "List Of Resources")
-    # eyes.force_full_page_screenshot = True
+    eyes.force_full_page_screenshot = True
     eyes.check(context.browser.current_url + " List of Resources", Target.window())
     eyes.close()
 

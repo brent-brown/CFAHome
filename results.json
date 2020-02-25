@@ -1,72 +1,103 @@
-[
-{
-  "elements": [
-    {
-      "keyword": "Scenario",
-      "location": "features\\first_behave.feature:3",
-      "name": "Add two numbers",
-      "steps": [
-        {
-          "keyword": "Given",
-          "location": "features\\first_behave.feature:4",
-          "match": {
-            "arguments": [],
-            "location": "features\\steps\\first_behave.py:6"
-          },
-          "name": "I have two integers a and b",
-          "result": {
-            "duration": 0.002001047134399414,
-            "status": "passed"
-          },
-          "step_type": "given"
-        },
-        {
-          "keyword": "When",
-          "location": "features\\first_behave.feature:5",
-          "match": {
-            "arguments": [],
-            "location": "features\\steps\\first_behave.py:12"
-          },
-          "name": "I add the numbers",
-          "result": {
-            "duration": 0.0009999275207519531,
-            "status": "passed"
-          },
-          "step_type": "when"
-        },
-        {
-          "keyword": "Then",
-          "location": "features\\first_behave.feature:6",
-          "match": {
-            "arguments": [],
-            "location": "features\\steps\\first_behave.py:17"
-          },
-          "name": "I print the addition result",
-          "result": {
-            "duration": 0.002000093460083008,
-            "error_message": [
-              "Traceback (most recent call last):",
-              "  File \"C:\\Python34\\lib\\site-packages\\behave\\model.py\", line 1456, in run",
-              "    match.run(runner.context)",
-              "  File \"C:\\Python34\\lib\\site-packages\\behave\\model.py\", line 1903, in run",
-              "    self.func(context, *args, **kwargs)",
-              "  File \"features\\steps\\first_behave.py\", line 20, in step_impl",
-              "    raise Exception",
-              "Exception"
-            ],
-            "status": "failed"
-          },
-          "step_type": "then"
-        }
-      ],
-      "tags": [],
-      "type": "scenario"
-    }
-  ],
-  "keyword": "Feature",
-  "location": "features\\first_behave.feature:1",
-  "name": "My first behave feature",
-  "status": "failed",
-  "tags": []
-}
-]
+Feature: Check Bookmark Page # features/Bookmark.feature:2
+
+  @demo
+  Scenario: Checking contents of bookmark page           # features/Bookmark.feature:6
+    Given I am on the CFAHome Page                       # None
+    When I click on the "Bookmark" icon                  # None
+    And I am on the bookmark page                        # None
+    Then The user should be able to view their bookmarks # None
+
+Feature: Check User's Profile # features/CheckProfile.feature:2
+
+  Scenario: Profile Checker                   # features/CheckProfile.feature:5
+    Given I am on the CFAHome Page            # None
+    When I click on the user Icon             # None
+    Then I should be on the User Profile page # None
+
+Feature: My first behave feature # features/first_behave.feature:1
+
+  Scenario: Add two numbers           # features/first_behave.feature:3
+    Given I have two integers a and b # features/steps/first_behave.py:6
+    When I add the numbers            # features/steps/first_behave.py:12
+    Then I print the addition result  # features/steps/first_behave.py:17
+
+Feature: Open website and print title # features/first_selenium.feature:1
+
+  Scenario: Open website                   # features/first_selenium.feature:2
+    Given I open seleniumframework website # features/steps/first_selenium.py:2
+    Then I print the title                 # features/steps/first_selenium.py:5
+
+Feature: Search - Desktop View # features/searchDesktop.feature:2
+
+  Scenario: Search Buckets - No filters selected              # features/searchDesktop.feature:5
+    Given I am on the CFAHome webpage                         # features/steps/search_desktopView.py:13
+    When I navigate to the search Page                        # features/steps/search_desktopView.py:199
+    Then I should see "All" search bucket header              # features/steps/search_desktopView.py:35
+    And I should see "People" search bucket header            # features/steps/search_desktopView.py:65
+    And I should see "Locations" search bucket header         # features/steps/search_desktopView.py:87
+    And I should see "Reports and Tools" search bucket header # features/steps/search_desktopView.py:108
+    And I should see "Resources" search bucket header         # features/steps/search_desktopView.py:129
+    And I should see "News" search bucket header              # features/steps/search_desktopView.py:152
+    Then The user is on the search page                       # features/steps/search_desktopView.py:188
+      Traceback (most recent call last):
+        File "/usr/local/lib/python3.7/site-packages/behave/model.py", line 1329, in run
+          match.run(runner.context)
+        File "/usr/local/lib/python3.7/site-packages/behave/matchers.py", line 98, in run
+          self.func(context, *args, **kwargs)
+        File "features/steps/search_desktopView.py", line 196, in step_impl
+          eyes.close()
+        File "/usr/local/lib/python3.7/site-packages/applitools/selenium/eyes.py", line 472, in close
+          result = self._current_eyes.close(raise_ex)
+        File "/usr/local/lib/python3.7/site-packages/applitools/selenium/selenium_eyes.py", line 287, in close
+          results = super(SeleniumEyes, self).close(raise_ex)
+        File "/usr/local/lib/python3.7/site-packages/applitools/core/eyes_base.py", line 332, in close
+          self.log_session_results_and_raise_exception(raise_ex, results)
+        File "/usr/local/lib/python3.7/site-packages/applitools/core/eyes_base.py", line 282, in log_session_results_and_raise_exception
+          raise DiffsFoundError(results, scenario_id_or_name, app_id_or_name)
+      applitools.common.errors.DiffsFoundError: 'Search Buckets - No filters selected' of 'CFAHome'. See details at https://eyes.applitools.com/app/batches/00000251819643810110/00000251819643809262?accountId=KT0ZQBAnmkWVrAKRL17pFw~~
+
+
+  Scenario: Search Filters - No filters selected                                                        # features/searchDesktop.feature:16
+    Given I am on the CFAHome webpage                                                                   # features/steps/search_desktopView.py:13
+    And I navigate to the search Page                                                                   # features/steps/search_desktopView.py:199
+    When I view the left side of the Page                                                               # features/steps/search_desktopView.py:218
+    Then I should see the "Person Type","Location Type", "Resource Type","Categories" and "Tags" filter # features/steps/search_desktopView.py:237
+      Traceback (most recent call last):
+        File "/usr/local/lib/python3.7/site-packages/behave/model.py", line 1329, in run
+          match.run(runner.context)
+        File "/usr/local/lib/python3.7/site-packages/behave/matchers.py", line 98, in run
+          self.func(context, *args, **kwargs)
+        File "features/steps/search_desktopView.py", line 252, in step_impl
+          eyes.close()
+        File "/usr/local/lib/python3.7/site-packages/applitools/selenium/eyes.py", line 472, in close
+          result = self._current_eyes.close(raise_ex)
+        File "/usr/local/lib/python3.7/site-packages/applitools/selenium/selenium_eyes.py", line 287, in close
+          results = super(SeleniumEyes, self).close(raise_ex)
+        File "/usr/local/lib/python3.7/site-packages/applitools/core/eyes_base.py", line 332, in close
+          self.log_session_results_and_raise_exception(raise_ex, results)
+        File "/usr/local/lib/python3.7/site-packages/applitools/core/eyes_base.py", line 282, in log_session_results_and_raise_exception
+          raise DiffsFoundError(results, scenario_id_or_name, app_id_or_name)
+      applitools.common.errors.DiffsFoundError: 'Search Filters - No filters selected' of 'CFAHome'. See details at https://eyes.applitools.com/app/batches/00000251819643810110/00000251819643598426?accountId=KT0ZQBAnmkWVrAKRL17pFw~~
+
+
+  Scenario: Search Results - Person Type filter selected    # features/searchDesktop.feature:22
+    Given I am on the CFAHome webpage                       # features/steps/search_desktopView.py:13
+    When I am on the Search page                            # features/steps/search_desktopView.py:172
+    And I have selected the "Contractor" Person Type filter # features/steps/search_desktopView.py:258
+    Then I should see the "contractor" filter selected      # features/steps/search_desktopView.py:266
+    And I should see "Department field" filters             # features/steps/search_desktopView.py:287
+
+  Scenario: Search Results - Location Type filter selected  # features/searchDesktop.feature:30
+    Given I am on the CFAHome webpage                       # features/steps/search_desktopView.py:13
+    And I navigate to the search Page                       # features/steps/search_desktopView.py:199
+    And I have selected a "Location Type" filter            # features/steps/search_desktopView.py:307
+    Then I should see the "Location Type" filter selected   # features/steps/search_desktopView.py:321
+    And I should see a "State" filter                       # features/steps/search_desktopView.py:328
+
+  Scenario: Search Results - Resource Type filter selected  # features/searchDesktop.feature:37
+    Given I am on the CFAHome webpage                       # features/steps/search_desktopView.py:13
+    And I navigate to the search Page                       # features/steps/search_desktopView.py:199
+    And I have selected the 'Resource' search Bucket        # features/steps/search_desktopView.py:347
+    And I have selected a "Resource Type" filter            # features/steps/search_desktopView.py:357
+    And I should see "Categories" filter options            # features/steps/search_desktopView.py:376
+    And I should see "Tags" filter options                  # features/steps/search_desktopView.py:385

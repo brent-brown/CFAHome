@@ -31,7 +31,7 @@ capabilities = {
   'browserName':'Chrome',
   'platform':'OS X 10.11',
   'version':'latest',
-  'name':'CFAHome -Search - Chrome(MAC OSX 10.11)'
+  'name':'CFAHome -Search - Chrome (MAC OSX 10.11)'
 }
 
 print(capabilities['browserName'])

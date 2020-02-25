@@ -15,8 +15,9 @@ use_step_matcher("re")
 def step_impl(context):
     # bookMarkIcon = context.browser.find_element_by_css_selector("a.person.bookmark-nav-icon.bookmark-select-nav")
     if Locators.BOOKMARK_ICON:
-        context.browser.find_element(*Locators.BOOKMARK_ICON).click()
-        context.browser.implicitly_wait(2000)
+        print()
+        #context.browser.find_element(*Locators.BOOKMARK_ICON).click()
+       # context.browser.implicitly_wait(2000)
     else:
         return Exception
 
@@ -39,8 +40,8 @@ def step_impl(context):
 
     # #bookList = context.browser.find_element_by_css_selector("#bookmark-page > ul")
     if "Bookmarks" in title:
-        eyes.branch_name = "Books"
-        eyes.open(context.browser, "CFAHome", "Bookmark Page (Desktop)")
+        #eyes.branch_name = "Books"
+        #eyes.open(context.browser, "CFAHome", "Bookmark Page (Desktop)")
 
         # eyes.force_full_page_screenshot = True
         # eyes.check_region_by_element()
@@ -49,10 +50,10 @@ def step_impl(context):
 
 
         # eyes.check_region_in_frame('#bookmark-page > ul')
-        eyes.check(context.browser.current_url, Target.window())
+        #eyes.check(context.browser.current_url, Target.window())
         print(context.browser.current_url)
 
         # End the test.
-        eyes.close()
+        #eyes.close()
     else:
         print("Not on bookmark page")
