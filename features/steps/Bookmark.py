@@ -1,12 +1,7 @@
-from behave import *
-from features.environment import *
-from selenium.common.exceptions import *
 from features.pages.CFAHomePageObjects import *
-from applitools.common import *
-from applitools.core import *
 
 from applitools.selenium import *
-from selenium import webdriver
+
 
 use_step_matcher("re")
 
