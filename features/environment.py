@@ -1,14 +1,14 @@
 import os
 
 
-from applitools.common import BatchInfo
-from selenium import webdriver
-from applitools.selenium import Eyes
-
+import applitools.common
+import selenium
+#from applitools.selenium import Eyes
+import applitools.selenium
 import applitools
 
-eyes = Eyes()
-batch_info = BatchInfo('CFAHome - Search Batch')
+eyes = applitools.selenium.eyes
+batch_info = applitools.common.BatchInfo('CFAHome - Search Batch')
 eyes.batch = batch_info
 
 # Initialize the eyes SDK and set your private API key.
@@ -59,7 +59,7 @@ def before_feature(context, feature):
 def before_scenario(context, scenario):
 
 
-    context.browser = webdriver.Remote(
+    context.browser = selenium.webdriver.Remote(
         desired_capabilities=capabilities,
         command_executor='http://%s:%s@ondemand.saucelabs.com:80/wd/hub' %
                          (SAUCE_USERNAME, SAUCE_ACCESS_KEY)
