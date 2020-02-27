@@ -1,11 +1,11 @@
 import os
 
+
+from applitools.common import BatchInfo
+from selenium import webdriver
+from applitools.selenium import Eyes
+
 import applitools
-# from applitools.common import BatchInfo
-# from selenium import webdriver
-# from applitools.selenium import Eyes
-
-
 
 eyes = Eyes()
 batch_info = BatchInfo('CFAHome - Search Batch')
