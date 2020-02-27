@@ -13,11 +13,12 @@ eyes.batch = batch_info
 
 # Initialize the eyes SDK and set your private API key.
 eyes.api_key = os.environ['APPLITOOLS_API_KEY']
-#eyes.api_key = 'Q9IT3T103XThPKgfJV21YwfRxdhyw109Ug97TM4YEtmg1HZw110'
+
 
 #Sauce Labs Credentials
-SAUCE_USERNAME = 'sso-chick-fil-a-brent.brown'
-SAUCE_ACCESS_KEY = '8963a173-6756-41db-8a8d-0f00417bd859'
+
+SAUCE_USERNAME = os.environ['SAUCE_USERNAME']
+SAUCE_ACCESS_KEY = os.environ['SAUCE_ACCESS_KEY']
 # capabilities = \
 #     {
 #         'browserName': 'chrome',
