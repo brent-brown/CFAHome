@@ -1,17 +1,18 @@
-import behave.when
+from behave import *
 
 
 import features.pages.CFAHomePageObjects
 import features
 import applitools.common.match
+from features.environment import *
 
 #from features.environment import eyes
 
 features.pages.CFAHomePageObjects.use_step_matcher("re")
-#use_step_matcher("re")
+use_step_matcher("re")
 
 
-@behave.when('I click on the "Bookmark" icon')
+@when('I click on the "Bookmark" icon')
 def step_impl(context):
     # bookMarkIcon = context.browser.find_element_by_css_selector("a.person.bookmark-nav-icon.bookmark-select-nav")
     if features.pages.CFAHomePageObjects.Locators.BOOKMARK_ICON:
@@ -24,7 +25,7 @@ def step_impl(context):
     print('STEP: I click on the "Bookmark" icon')
 
 
-@behave.step("I am on the bookmark page")
+@step("I am on the bookmark page")
 def step_impl(context):
     context.browser.implicitly_wait(1000)
     title = context.browser.title
@@ -34,7 +35,7 @@ def step_impl(context):
     print('STEP: I am on the bookmark page')
 
 
-@behave.then("The user should be able to view their bookmarks")
+@then("The user should be able to view their bookmarks")
 def step_impl(context):
     title = context.browser.title
 
