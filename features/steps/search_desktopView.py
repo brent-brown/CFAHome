@@ -3,12 +3,12 @@ from unittest import result
 from applitools.common import MatchLevel
 from behave import *
 import behave.contrib
-#from features.environment import *
-import features.environment
-#from features.pages.CFAHomePageObjects import Locators
-#from applitools.selenium import Eyes, Target
-import applitools.selenium
-import features.pages.CFAHomePageObjects
+from features.environment import *
+#import features.environment
+from features.pages.CFAHomePageObjects import Locators
+from applitools.selenium import Eyes, Target
+#import applitools.selenium
+#mport features.pages.CFAHomePageObjects
 
 use_step_matcher("re")
 
