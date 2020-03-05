@@ -6,7 +6,7 @@ import os
 from selenium import webdriver
 from applitools.selenium import Eyes
 import environment
-from features.environment import *
+#from features.environment import *
 
 use_step_matcher("re")
 
@@ -70,9 +70,9 @@ def step_impl(context):
     print(title)
     assert "Accounts" in title
     #eyes.open(context.browser, "User Profile", "HomePage", {'width': 800, 'height': 600})
-    eyes.check("Check Profile Test", Target.window())
+    #eyes.check("Check Profile Test", Target.window())
 
     # End the test.
-    eyes.close()
+    #eyes.close()
 
     print('STEP: Then I should be on the User Profile page')
