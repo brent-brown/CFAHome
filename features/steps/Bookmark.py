@@ -5,24 +5,25 @@ from behave import *
 # import features
 import applitools.common.match
 from features.environment import *
+from applitools.selenium import Eyes
 
 #from features.environment import eyes
 
 #features.pages.CFAHomePageObjects.use_step_matcher("re")
-from features.pages.CFAHomePageObjects import *
+#from features.pages.CFAHomePageObjects import *
 
 use_step_matcher("re")
 
 
 @when('I click on the "Bookmark" icon')
 def step_impl(context):
-    # bookMarkIcon = context.browser.find_element_by_css_selector("a.person.bookmark-nav-icon.bookmark-select-nav")
-    if Locators.BOOKMARK_ICON:
-        print()
-        #context.browser.find_element(*Locators.BOOKMARK_ICON).click()
-       # context.browser.implicitly_wait(2000)
-    else:
-        return Exception
+    # # bookMarkIcon = context.browser.find_element_by_css_selector("a.person.bookmark-nav-icon.bookmark-select-nav")
+    # if Locators.BOOKMARK_ICON:
+    #     print()
+    #     #context.browser.find_element(*Locators.BOOKMARK_ICON).click()
+    #    # context.browser.implicitly_wait(2000)
+    # else:
+    #     return Exception
 
     print('STEP: I click on the "Bookmark" icon')
 
@@ -50,7 +51,7 @@ def step_impl(context):
         # eyes.force_full_page_screenshot = True
         # eyes.check_region_by_element()
 
-       eyes.match_level = eyes.MatchLevel.LAYOUT
+       #eyes.match_level = applitools.MatchLevel.LAYOUT
        print(context.browser.current_url)
 
         # End the test.
