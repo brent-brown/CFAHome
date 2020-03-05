@@ -3,9 +3,9 @@ from behave import *
 
 # import features.pages.CFAHomePageObjects
 # import features
-import applitools.common.match
-from features.environment import *
-from applitools.selenium import Eyes
+#import applitools.common.match
+#from features.environment import *
+#from applitools.selenium import Eyes
 
 #from features.environment import eyes
 
