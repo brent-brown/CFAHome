@@ -1,14 +1,14 @@
 import os
 
 
-import applitools.common
-import selenium
-#from applitools.selenium import Eyes
-import applitools.selenium
-import applitools
+from applitools.common import BatchInfo
+from selenium import webdriver
+from applitools.selenium import Eyes
 
-eyes = applitools.selenium.eyes
-batch_info = applitools.common.BatchInfo('CFAHome - Search Batch')
+
+
+eyes = Eyes()
+batch_info = BatchInfo('CFAHome - Search Batch')
 eyes.batch = batch_info
 
 # Initialize the eyes SDK and set your private API key.
