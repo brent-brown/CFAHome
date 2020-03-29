@@ -1,23 +1,16 @@
+from applitools.common import MatchLevel
 from behave import *
+from features.pages.CFAHomePageObjects import *
+from applitools.selenium import Eyes, Target
+import features.environment
 
-
-# import features.pages.CFAHomePageObjects
-# import features
-#import applitools.common.match
-#from features.environment import *
-#from applitools.selenium import Eyes
-
-#from features.environment import eyes
-
-#features.pages.CFAHomePageObjects.use_step_matcher("re")
-#from features.pages.CFAHomePageObjects import *
 
 use_step_matcher("re")
 
 
 @when('I click on the "Bookmark" icon')
 def step_impl(context):
-    # # bookMarkIcon = context.browser.find_element_by_css_selector("a.person.bookmark-nav-icon.bookmark-select-nav")
+    context.browser.find_element_by_css_selector("a.person.bookmark-nav-icon.bookmark-select-nav").click()
     # if Locators.BOOKMARK_ICON:
     #     print()
     #     #context.browser.find_element(*Locators.BOOKMARK_ICON).click()
@@ -44,17 +37,12 @@ def step_impl(context):
 
     # #bookList = context.browser.find_element_by_css_selector("#bookmark-page > ul")
     if "Bookmarks" in title:
+        # eyes.branch_name = "Books"
+        eyes.open(context.browser, "CFAHome", "Bookmark Page (Desktop)")
 
-        #eyes.branch_name = "Books"
-        #eyes.open(context.browser, "CFAHome", "Bookmark Page (Desktop)")
+        eyes.match_level = MatchLevel.LAYOUT
+        eyes.check(context.browser.current_url + title + " Bookmark Page Check", Target.window())
+        eyes.close()
 
-        # eyes.force_full_page_screenshot = True
-        # eyes.check_region_by_element()
-
-       #eyes.match_level = applitools.MatchLevel.LAYOUT
-       print(context.browser.current_url)
-
-        # End the test.
-        #eyes.close()
     else:
         print("Not on bookmark page")

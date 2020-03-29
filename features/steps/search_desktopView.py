@@ -1,14 +1,13 @@
-from unittest import result
+
 
 from applitools.common import MatchLevel
 from behave import *
-import behave.contrib
-from features.environment import *
-#import features.environment
-from features.pages.CFAHomePageObjects import Locators
+
+import features.environment
+from features.pages.CFAHomePageObjects import *
 from applitools.selenium import Eyes, Target
-#import applitools.selenium
-#mport features.pages.CFAHomePageObjects
+import applitools.selenium
+
 
 use_step_matcher("re")
 
@@ -37,7 +36,7 @@ def step_impl(context):
 
 @then('I should see "All" search bucket header')
 def step_impl(context):
-    print(Locators.ALL_BUCKET)
+    #print(Locators.ALL_BUCKET)
     if context.browser.find_element_by_css_selector("body > header > div > div:nth-child(1) > a").is_displayed():
 
     # and context.browser.find_element_by_css_selector(Locators.PEOPLE) \
@@ -45,7 +44,7 @@ def step_impl(context):
     # and context.browser.find_element_by_css_selector(Locators.RESOURCES) \
     # and context.browser.find_element_by_css_selector(Locators.REPORTS_TOOLS):
 
-    # eyes.open(context.browser, "CFAHome", "All Search Bucket")
+    #eyes.open(context.browser, "CFAHome", "All Search Bucket")
     # eyes.force_full_page_screenshot = True
 
     # eyes.check(context.browser.current_url, Target.window())
@@ -78,7 +77,7 @@ def step_impl(context):
     # eyes.close()
 
     else:
-        # eyes.open(context.browser, "Search", "All - Desktop View - Error")
+        #eyes.open(context.browser, "Search", "All - Desktop View - Error")
         # eyes.force_full_page_screenshot = True
         # eyes.check("Search " + "People Search Bucket -  Not found", Target.window())
         # # End the test.

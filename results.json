@@ -1,1 +1,78 @@
 Feature: Check Bookmark Page # features/Bookmark.feature:2
+
+  @demo
+  Scenario: Checking contents of bookmark page           # features/Bookmark.feature:6
+    Given I am on the CFAHome Page                       # None
+    When I click on the "Bookmark" icon                  # None
+    And I am on the bookmark page                        # None
+    Then The user should be able to view their bookmarks # None
+
+Feature: Check User's Profile # features/CheckProfile.feature:2
+
+  Scenario: Profile Checker                   # features/CheckProfile.feature:5
+    Given I am on the CFAHome Page            # None
+    When I click on the user Icon             # None
+    Then I should be on the User Profile page # None
+
+Feature: #Enter feature name here # features/DesktopRegression.feature:2
+
+  Scenario: # Enter scenario name here  # features/DesktopRegression.feature:5
+
+Feature: Search - Desktop View # features/searchDesktop.feature:2
+
+  Scenario: Search Buckets - No filters selected              # features/searchDesktop.feature:5
+    Given I am on the CFAHome webpage                         # None
+    When I navigate to the search Page                        # None
+    Then I should see "All" search bucket header              # None
+    And I should see "People" search bucket header            # None
+    And I should see "Locations" search bucket header         # None
+    And I should see "Reports and Tools" search bucket header # None
+    And I should see "Resources" search bucket header         # None
+    And I should see "News" search bucket header              # None
+    Then The user is on the search page                       # None
+
+  Scenario: Search Filters - No filters selected                                                        # features/searchDesktop.feature:16
+    Given I am on the CFAHome webpage                                                                   # None
+    And I navigate to the search Page                                                                   # None
+    When I view the left side of the Page                                                               # None
+    Then I should see the "Person Type","Location Type", "Resource Type","Categories" and "Tags" filter # None
+
+  Scenario: Search Results - Person Type filter selected    # features/searchDesktop.feature:22
+    Given I am on the CFAHome webpage                       # None
+    When I am on the Search page                            # None
+    And I have selected the "Contractor" Person Type filter # None
+    Then I should see the "contractor" filter selected      # None
+    And I should see "Department field" filters             # None
+
+  Scenario: Search Results - Location Type filter selected  # features/searchDesktop.feature:30
+    Given I am on the CFAHome webpage                       # None
+    And I navigate to the search Page                       # None
+    And I have selected a "Location Type" filter            # None
+    Then I should see the "Location Type" filter selected   # None
+    And I should see a "State" filter                       # None
+
+  Scenario: Search Results - Resource Type filter selected  # features/searchDesktop.feature:37
+    Given I am on the CFAHome webpage                       # None
+    And I navigate to the search Page                       # None
+    And I have selected the 'Resource' search Bucket        # None
+    And I have selected a "Resource Type" filter            # None
+    And I should see "Categories" filter options            # None
+    And I should see "Tags" filter options                  # None
+
+  Scenario: Search Results - Resource Type filter selected - Results  # features/searchDesktop.feature:45
+    Given I am on the CFAHome webpage                                 # None
+    And I navigate to the search Page                                 # None
+    And I have selected a "Resource Type" filter                      # None
+    And I should see a "Resource type" filter selected                # None
+    And I should see several "Resources" appearing                    # None
+    Then I should see a list of Resources                             # None
+
+  Scenario: Search Results - News Search bucket selected  # features/searchDesktop.feature:53
+    Given I am on the CFAHome webpage                     # None
+    And I navigate to the search Page                     # None
+    When I have selected the 'News' search Bucket         # None
+    And I should see "Categories" filter options          # None
+    And I should see "Tags" filter options                # None
+    And I should see News results displaying              # None
+    And I should see the most recent news appearing first # None
+
