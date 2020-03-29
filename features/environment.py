@@ -1,7 +1,7 @@
 import os
 
 
-from applitools.common import BatchInfo
+
 from selenium import webdriver
 from applitools.selenium import Eyes
 
