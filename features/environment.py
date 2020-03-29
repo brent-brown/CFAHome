@@ -91,12 +91,12 @@ def before_scenario(context, scenario):
     theUser.clear()
 
     enterUN = os.environ['CFAUSER_ADMIN']
-    theUser.send_keys("enterUN")
+    theUser.send_keys(os.environ['CFAUSER_ADMIN'])
 
     passsword = context.browser.find_element_by_css_selector("#okta-signin-password")
     passsword.clear()
     enterPW = os.environ['CFAPW_ADMIN']
-    passsword.send_keys(os.environ['enterPW'])
+    passsword.send_keys(os.environ['CFAPW_ADMIN'])
 
     context.browser.find_element_by_css_selector("#okta-signin-submit").click()
     context.browser.implicitly_wait(200)
