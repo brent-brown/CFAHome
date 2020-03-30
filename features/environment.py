@@ -17,10 +17,10 @@ eyes.api_key = os.environ['APPLITOOLS_API_KEY']
 
 #Sauce Labs Credentials
 
-#SAUCE_USERNAME = os.environ['SAUCE_USERNAME']
-SAUCE_USERNAME= 'sso-chick-fil-a-brent.brown'
-#SAUCE_ACCESS_KEY = os.environ['SAUCE_ACCESS_KEY']
-SAUCE_ACCESS_KEY= '8963a173-6756-41db-8a8d-0f00417bd859'
+SAUCE_USERNAME = os.environ['SAUCE_USERNAME']
+#SAUCE_USERNAME= 'sso-chick-fil-a-brent.brown'
+SAUCE_ACCESS_KEY = os.environ['SAUCE_ACCESS_KEY']
+#SAUCE_ACCESS_KEY= '8963a173-6756-41db-8a8d-0f00417bd859'
 # capabilities = \
 #     {
 #         'browserName': 'chrome',
@@ -84,7 +84,7 @@ def before_scenario(context, scenario):
     print('Link to your job: https://saucelabs.com/jobs/%s' % id)
 
     # eyes.open(context.browser, "CFAHome","Search")
-    context.browser.get("https://prep.portal.cfahome.com/")
+    context.browser.get("https://int.portal.cfahome.com/")
     context.browser.implicitly_wait(500)
 
     theUser = context.browser.find_element_by_xpath('//*[@id="okta-signin-username"]')
