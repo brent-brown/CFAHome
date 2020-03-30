@@ -95,7 +95,7 @@ def step_impl(context):
         print (title, " - Yes, we are on the right page!")
     eyes.open(context.browser, "CFAHome", "EMail Check")
     eyes.match_level = MatchLevel.LAYOUT
-    #eyes.force_full_page_screenshot = True
+    #eyes.force_full_page_screenshot = Truee
     eyes.check(context.browser.current_url + "EMAIL CHECK", Target.window())
 
     # # End the test.
