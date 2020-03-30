@@ -532,7 +532,7 @@ def step_impl(context):
         context.browser.find_element_by_css_selector("#okta-signin-submit").click()
         context.browser.implicitly_wait(200)
 
-        popUpMessage = context.browser.find_element_by_css_selector("#wm-shoutout-170936")
+        popUpMessage = context.browser.find_element_by_css_selector('wm-shoutout-170936')
         context.browser.implicitly_wait(500)
         if popUpMessage.is_displayed():
             context.browser.find_element_by_css_selector(
