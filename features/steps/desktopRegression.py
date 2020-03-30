@@ -7,7 +7,7 @@ import features.environment
 use_step_matcher("re")
 
 
-@when("I search for (?P<items>.+)")
+@when("I search for {items}")
 def step_impl(context, items):
     if context.browser.find_element_by_css_selector('#txtSearch'):
         context.browser.find_element_by_css_selector('#txtSearch').send_keys(items)
@@ -16,7 +16,7 @@ def step_impl(context, items):
     print(u'STEP: When I search for <items>')
 
 
-@then("I should see (?P<items>.+) in the search results")
+@then("I should see {items} in the search results")
 def step_impl(context, items):
     itemName = context.browser.find_element_by_xpath('(//div[@class="source-title"])').text
     context.browser.find_element_by_xpath('(//div[@class="source-title"])').click()
@@ -105,7 +105,7 @@ def step_impl(context):
     print(u'STEP: Then The user should be redirected to another page to sign in')
 
 
-@when("I click on a link to a (?P<report_tool>.+)")
+@when("I click on a link to a {report_tool}")
 def step_impl(context, report_tool):
     context.browser.find_element_by_css_selector("#txtSearch").send_keys(report_tool)
     context.browser.find_element_by_css_selector("#searchSection > ul > li:nth-child(1) > a").click()

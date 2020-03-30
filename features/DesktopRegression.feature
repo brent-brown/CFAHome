@@ -6,10 +6,10 @@ Feature: Desktop Regression
     Given I am on the CFAHome webpage
     When I search for <items>
     Then I should see <items> in the search results
-   Examples: Search Items
-      | items                   |
-      | Chicken Supply          |
-      | Lemon Juicers Program   |
+    Examples: Search Items
+      | items                 |
+      | Chicken Supply        |
+      | Lemon Juicers Program |
 
   Scenario: Logout Check
     Given I am on the CFAHome webpage
@@ -38,7 +38,7 @@ Feature: Desktop Regression
     When I click on a link to a <report_tool>
     Then I should be redirected to a new tab
     Examples: Search Items
-       | report_tool             |
-       | Backstage Tour          |
-       | BlueJeans               |
+      | report_tool    |
+      | Backstage Tour |
+      | BlueJeans      |
 
