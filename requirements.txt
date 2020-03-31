@@ -1,11 +1,12 @@
 Appium-Python-Client ==0.50
 behave==1.2.6
 environment==1.0.0
-eyes-common==4.1.23
-eyes-core==4.1.23
-eys-selenium ==4.1.23
-selenium==3.141.0
-selenium-page-factory==1.6
-selenium-page-objects==0.2.1
-selenium-pages==0.1.0a0
-selenium-saucelabs-python==0.3.1
+eyes-common>=4.1.23
+eyes-core>=4.1.23
+eys-selenium >=4.1.23
+selenium>=3.141.0
+selenium-page-factory>=1.6
+selenium-page-objects>=0.2.1
+selenium-pages>=0.1.0a0
+selenium-saucelabs-python>=0.3.1
+allure-behave>=2.8.12
