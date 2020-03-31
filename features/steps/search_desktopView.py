@@ -516,7 +516,7 @@ def step_impl(context):
     def step_impl(context):
         eyes.open(context.browser, "CFAHome", "Search - Desktop View")
         context.browser.get("https://int.portal.cfahome.com")
-        context.browser.implicitly_wait(500)
+        context.browser.implicitly_wait(600)
 
         theUser = context.browser.find_element_by_xpath('//*[@id="okta-signin-username"]')
         theUser.clear()
