@@ -1,7 +1,7 @@
 from applitools.common import MatchLevel
 from behave import *
 from features.pages.CFAHomePageObjects import *
-from applitools.selenium import Eyes, Target
+from applitools.selenium import Eyes, Target, BatchInfo
 import features.environment
 
 use_step_matcher("re")
