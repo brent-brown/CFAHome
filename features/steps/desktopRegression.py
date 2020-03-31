@@ -66,14 +66,14 @@ def step_impl(context):
 def step_impl(context):
     if context.browser.find_element_by_css_selector('body > div.profile-page > div > div.tab-container'):
         print("on the user profile page")
-
-    eyes.open(context.browser, "CFAHome", "Logout Check")
-    eyes.match_level = MatchLevel.LAYOUT
-    #eyes.force_full_page_screenshot = True
-    eyes.check(context.browser.current_url + "Log Out Check", Target.window())
-
-    # # End the test.
-    eyes.close()
+    #
+    # eyes.open(context.browser, "CFAHome", "Logout Check")
+    # eyes.match_level = MatchLevel.LAYOUT
+    # #eyes.force_full_page_screenshot = True
+    # eyes.check(context.browser.current_url + "Log Out Check", Target.window())
+    #
+    # # # End the test.
+    # eyes.close()
 
 
     print(u'STEP: Then I should see the Profile, Account Settings, and Update Information links')
