@@ -15,13 +15,13 @@ use_step_matcher("re")
 @given("I am on the CFAHome webpage")
 def step_impl(context):
 
-    popUpMessage = context.browser.find_element_by_css_selector("#wm-shoutout-170936")
-    context.browser.implicitly_wait(500)
-    if popUpMessage.is_displayed():
-        context.browser.find_element_by_css_selector(
-            '#wm-shoutout-170936 > div.wm-content > div.buttons-wrapper > span').click()
-    else:
-        return
+    # popUpMessage = context.browser.find_element_by_css_selector("#wm-shoutout-170936")
+    # context.browser.implicitly_wait(500)
+    # if popUpMessage.is_displayed():
+    #     context.browser.find_element_by_css_selector(
+    #         '#wm-shoutout-170936 > div.wm-content > div.buttons-wrapper > span').click()
+    # else:
+    #     return
 
     welcome = context.browser.find_element_by_css_selector('body > div.chik-header > div > a.logo-container > img')
     # content = context.browser.find_element_by_css_selector('div.prefName')
