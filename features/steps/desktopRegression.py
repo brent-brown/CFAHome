@@ -105,7 +105,7 @@ def step_impl(context):
     print(u'STEP: Then The user should be redirected to another page to sign in')
 
 
-@when("I click on a link to a {report_tool}")
+@when("I click on a link to a (?P<report_tool>.+)")
 def step_impl(context, report_tool):
     context.browser.find_element_by_css_selector("#txtSearch").send_keys(report_tool)
     context.browser.find_element_by_css_selector("#searchSection > ul > li:nth-child(1) > a").click()
@@ -137,4 +137,5 @@ def step_impl(context):
 
 
     print(u'STEP: Then I should be redirected to a new tab')
+
 
