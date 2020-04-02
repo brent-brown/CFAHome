@@ -84,7 +84,8 @@ def before_scenario(context, scenario):
     print('Link to your job: https://saucelabs.com/jobs/%s' % id)
 
     # eyes.open(context.browser, "CFAHome","Search")
-    context.browser.get("https://int.portal.cfahome.com/")
+    context.browser.get("https://" + os.environ['CFAHOME_ENV'] + ".portal.cfahome.com/")
+    #context.browser.get("https://int.portal.cfahome.com/")
     context.browser.implicitly_wait(500)
 
     theUser = context.browser.find_element_by_xpath('//*[@id="okta-signin-username"]')
