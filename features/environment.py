@@ -36,6 +36,13 @@ capabilities = {
   'name':'CFAHome -Search - Chrome (MAC OSX 10.11)'
 }
 
+jenkins_capabilities = {
+  'browserName':os.environ['BROWSER'],
+  'platform':os.environ['PLATFORM'],
+  'version':os.environ['VERSION'],
+  'name':'CFAHome -Automation W/ '+ os.environ['BROWSER'] + 'using ' + os.environ['PLATFORM']
+}
+
 capabilities2 = {
   'browserName':'Firefox',
   'platform':'OS X 10.11',
@@ -72,7 +79,7 @@ def before_feature(context, feature):
 # Scenario level objects are popped off context when scenario exits
 def before_scenario(context, scenario):
     context.browser = webdriver.Remote(
-        desired_capabilities=capabilities,
+        desired_capabilities=jenkins_capabilities,
         command_executor='http://%s:%s@ondemand.saucelabs.com:80/wd/hub' %
                          (SAUCE_USERNAME, SAUCE_ACCESS_KEY)
 
