@@ -16,11 +16,8 @@ eyes.api_key = os.environ['APPLITOOLS_API_KEY']
 
 
 #Sauce Labs Credentials
-
 SAUCE_USERNAME = os.environ['SAUCE_USERNAME']
-#SAUCE_USERNAME= 'sso-chick-fil-a-brent.brown'
 SAUCE_ACCESS_KEY = os.environ['SAUCE_ACCESS_KEY']
-#SAUCE_ACCESS_KEY= '8963a173-6756-41db-8a8d-0f00417bd859'
 # capabilities = \
 #     {
 #         'browserName': 'chrome',
@@ -40,7 +37,7 @@ jenkins_capabilities = {
   'browserName':os.environ['BROWSER'],
   'platform':os.environ['PLATFORM'],
   'version':os.environ['VERSION'],
-  'name':'CFAHome -Automation W/ '+ os.environ['BROWSER'] + 'using ' + os.environ['PLATFORM']
+  'name':'CFAHome -Automation W/ '+ os.environ['BROWSER'] + ' using ' + os.environ['PLATFORM']
 }
 
 capabilities2 = {
