@@ -18,20 +18,7 @@ eyes.api_key = os.environ['APPLITOOLS_API_KEY']
 #Sauce Labs Credentials
 SAUCE_USERNAME = os.environ['SAUCE_USERNAME']
 SAUCE_ACCESS_KEY = os.environ['SAUCE_ACCESS_KEY']
-# capabilities = \
-#     {
-#         'browserName': 'chrome',
-#         'browserVersion': 'latest',
-#         'platformName': 'OS X 10.11',
-#         'sauce:options': {
-#             'name': 'Testing Selenium with Behave - Chrome',
-#         }}
-capabilities = {
-  'browserName':'Chrome',
-  'platform':'OS X 10.11',
-  'version':'latest',
-  'name':'CFAHome -Search - Chrome (MAC OSX 10.11)'
-}
+
 
 jenkins_capabilities = {
   'browserName':os.environ['BROWSER'],
